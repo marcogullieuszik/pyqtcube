@@ -1,0 +1,51 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: wavelengt_air, unit: Angstrom, datatype: float64}
+# - {name: name, datatype: string, format: 8s}
+# - {name: flag, datatype: bool}
+# schema: astropy-2.0
+wavelengt_air name flag
+3726.03 [OII] True
+3728.82 [OII] True
+3750.15 H12 True
+3770.63 H11 True
+3797.9 H10 True
+3835.39 H9 True
+3868.71 [NeIII] False
+3888.65 HeI False
+3889.05 H8 True
+3933.663 CaII_K True
+3967.41 [NeIII] False
+3968.468 CaII_H True
+3970.07 He True
+4101.76 Hd True
+4340.47 Hc True
+4363.21 [OIII] False
+4685.71 HeII False
+4861.33 Hb True
+4958.92 [OIII] True
+5006.84 [OIII] True
+5167.321 Mgb True
+5172.684 Mgb True
+5183.604 Mgb True
+5577.3387 [OI] False
+5754.64 [NeII] False
+5754.64 [NII] False
+5875.67 HeI False
+5889.951 NaI True
+5895.924 NaI True
+6300.3 [OI] False
+6312.1 [SIII] False
+6548.03 [NII] True
+6562.8 Ha True
+6583.41 [NII] True
+6678.152 HeI False
+6716.47 [SII] True
+6730.85 [SII] True
+7135.8 [ArIII] False
+7751.1 [ArIII] False
+8498.03 CaII False
+8542.09 CaII False
+8662.14 CaII False
+9068.6 [SIII] False

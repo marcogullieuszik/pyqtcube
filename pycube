@@ -1,0 +1,24 @@
+#!/usr/bin/env python
+
+import pyqtcube
+import sys,os
+import argparse
+
+if __name__=="__main__":
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument('file', metavar='filename', type=str,
+                    help='the input spectral cube fits file')
+
+
+    args = parser.parse_args()
+
+    ifile=args.file
+    if not os.path.isfile(ifile):
+        print ("file not found:",ifile)
+        sys.exit()
+
+    extn=1
+    cube = pyqtcube.DataCube.read(ifile, extn=1)
+    pyqtcube.run(cube)
+
