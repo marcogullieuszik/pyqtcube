@@ -10,17 +10,22 @@ class PositionMarker(QtCore.QObject):
     x = 0
     y = 0
     r = 0
-    color = (0, 255, 0)
-
+    #color = (0, 255, 0,128)
+    #color='w'
+    color=(255,255,255,128)
+    color2=(0,0,0,128)
     def __init__(self):
         super().__init__()
-
+        pen=pg.mkPen('black', width=2)
         self.cross = pg.PlotDataItem(symbolBrush=self.color,
-                                     symbolPen=None,
+                                     symbolPen=pen,
                                      symbolSize=30, symbol='+', pen=None)
 
         self.circle = pg.QtGui.QGraphicsEllipseItem(10, 10, self.r, self.r)
-        self.circle.setPen(pg.mkPen(self.color, width=5))
+        # self.circle.setPen(pg.mkPen(self.color, width=3))
+        # self.circle.setBrush(pg.mkBrush((100, 100, 100,100)))
+        self.circle.setPen(pg.mkPen(self.color2, width=3))
+        self.circle.setBrush(pg.mkBrush(self.color))
         self.circle.setVisible(False)
 
     def setPositon(self, x, y):
@@ -31,6 +36,7 @@ class PositionMarker(QtCore.QObject):
     def setRadius(self, r):
         self.r = r
         self.circle.setVisible(r > 0)
+        self.cross.setVisible(r == 0)
         self.updatePlot()
 
     def updatePlot(self):
@@ -83,7 +89,7 @@ class PyCubeImageViewerPanel(ImageViewer):
         self.markerColor2 = (204, 0, 0)
 
         self.posMarker = PositionMarker()
-        PositionMarker.color = self.markerColor
+#        PositionMarker.color = self.markerColor
         self.posMarker.addTo(self.wid_image.vb)
         self.posMarker2 = pg.PlotDataItem([100], [100], symbolBrush=self.markerColor2,
                                           symbolPen=None,

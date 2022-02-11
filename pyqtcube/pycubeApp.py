@@ -29,6 +29,7 @@ class Window(QMainWindow):
         self.x = None
         self.y = None
         self.z = None
+        self.r=0
         self.imageviewer = PyCubeImageViewerPanel()
         self.specviewer = SpecViewer()
 
@@ -185,7 +186,9 @@ class Window(QMainWindow):
     def posChanged(self, x, y):
         self.x = x
         self.y = y
-        self.specviewer.updateSpec(self.cube.get_1dSpec(self.x, self.y))
+        # self.specviewer.updateSpec(self.cube.get_1dSpec(self.x, self.y))
+        self.specviewer.updateSpec(self.cube.get_1dSpec(self.x, self.y, r=self.r))
+
         self.subplotController.setData1()
 
     def radiusChanged(self, r):
