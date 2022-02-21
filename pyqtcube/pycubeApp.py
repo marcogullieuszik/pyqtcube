@@ -188,7 +188,8 @@ class Window(QMainWindow):
         self.y = y
         # self.specviewer.updateSpec(self.cube.get_1dSpec(self.x, self.y))
         self.specviewer.updateSpec(self.cube.get_1dSpec(self.x, self.y, r=self.r))
-
+        self.specviewer.updateLabelPos("%d, %d"%(x,y))
+        
         self.subplotController.setData1()
 
     def radiusChanged(self, r):
@@ -215,7 +216,7 @@ class Window(QMainWindow):
         self.setmode(0)
         self.imageviewer.wid_image.vb.autoRange(padding=0)
         self.imageviewer.posMarker.setPositon(self.x, self.y)
-
+        self.specviewer.updateLabelPos("%d, %d"%(self.x,self.y))
         self.specviewer.setWavelengts(self.cube.wavelenght)
         self.specviewer.updateSpec(self.cube.get_1dSpec(self.x, self.y))
         self.specviewer.setVlineId(self.z)

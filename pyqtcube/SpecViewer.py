@@ -158,6 +158,7 @@ class SpecViewer(QWidget):
         self.le_redshift = QLabel("%s" % self.redshift)
         self.le_redshift.setTextInteractionFlags(QtCore.Qt.TextSelectableByMouse)
 
+        self.label_position=QLabel("xy")
         self.editRegion = None
         self.viewRegionMode = False
 
@@ -232,6 +233,7 @@ class SpecViewer(QWidget):
         topBox.addWidget(QLabel("z="))
         topBox.addWidget(self.le_redshift)
         topBox.addStretch(1)
+        topBox.addWidget(self.label_position)
 
         mainbox.addLayout(topBox)
 
@@ -247,6 +249,9 @@ class SpecViewer(QWidget):
         self._wav = w
 
         self.vb.setLimits(xMin=self.wav.min(), xMax=self.wav.max())
+
+    def updateLabelPos(self,s):
+        self.label_position.setText(s)
 
     def updateSpec(self, v):
         self.spec = v

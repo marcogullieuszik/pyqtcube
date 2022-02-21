@@ -5,5 +5,6 @@ Install
 ============
 
 ::
-   pip install git+https://github.com/marcogullieuszik/pyqtcube.git
 
+    pip install git+https://github.com/marcogullieuszik/pyqtcube.git
+    
